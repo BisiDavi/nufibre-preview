@@ -18,30 +18,35 @@ export default function HomepageHero() {
 
 	useGSAP(() => {
 		const menuLinks = document.querySelectorAll(".menu_link");
-        const underlineSpan = document.createElement("span");
-		underlineSpan.style.position = "absolute";
-		underlineSpan.style.bottom = "0";
-		underlineSpan.style.left = "0";
-		underlineSpan.style.width = "100%";
-		underlineSpan.style.height = "2px";
-		underlineSpan.style.backgroundColor = "#4299e1";
-		underlineSpan.style.transformOrigin = "left";
-
-		// Start with the underline scaled to 0 width (invisible)
-		underlineSpan.style.transform = "scaleX(0)";
-
 		// Add the underline span to the menu item
-        
+
 		menuLinks.forEach((element) => {
-            element.appendChild(underlineSpan);
+			const underlineSpan = document.createElement("span");
+			underlineSpan.style.position = "absolute";
+			underlineSpan.style.bottom = "0";
+			underlineSpan.style.left = "0";
+			underlineSpan.style.width = "100%";
+			underlineSpan.style.height = "2px";
+			underlineSpan.style.backgroundColor = "#00E3EC";
+			underlineSpan.style.transformOrigin = "left";
+
+			// Start with the underline scaled to 0 width (invisible)
+			underlineSpan.style.transform = "scaleX(0)";
+
+			element.appendChild(underlineSpan);
+
 			element.addEventListener("mouseenter", () => {
-				gsap.to(element, {
-					color: "red",
+				gsap.to(underlineSpan, {
+					scaleX: 1,
+					duration: 0.4,
+					ease: "power2.out",
 				});
 			});
-            element.addEventListener("mouseleave", () => {
-				gsap.to(element, {
-					color: "#fff",
+			element.addEventListener("mouseleave", () => {
+				gsap.to(underlineSpan, {
+					scaleX: 0,
+					duration: 0.4,
+					ease: "power2.in",
 				});
 			});
 		});
@@ -78,7 +83,7 @@ export default function HomepageHero() {
 				each: 0.1,
 			},
 		});
-	}, [container]);
+	}, []);
 
 	return (
 		<div>
