@@ -23,14 +23,14 @@ const footerItems = [
 export default function Footer() {
 	return (
 		<footer className="bg-[#0f0f0f] border-t-[#0e2223] border-t-[1px] text-[#fff] py-8">
-			<div className="container mx-auto">
-				<div className="top_row flex justify-between items-center">
+			<div className="container mx-auto px-6 md:px-0">
+				<div className="top_row md:flex-row flex flex-col gap-6 justify-between items-start md:items-center">
 					<Logo />
 					<nav className="footer_nav">
-						<ul className="flex space-x-12 text-[14px] font-[500] text-[#fff]">
+						<ul className="grid grid-cols-3 gap-2 md:flex space-x-12 text-[14px] font-[500] text-[#fff]">
 							{footerMenuItems.map((item) => (
 								<li key={item.name}>
-									<a href={item.href} className="menu_link pb-2 relative text-[600] font-[#fff] text-[14px]">
+									<a href={item.href} className="menu_link whitespace-nowrap pb-2 relative text-[600] font-[#fff] text-[14px]">
 										{item.name}
 									</a>
 								</li>
@@ -38,29 +38,29 @@ export default function Footer() {
 						</ul>
 					</nav>
 				</div>
-				<div className="mid_row flex justify-between items-start mt-8">
-					<div className="mt-6">
-						<h5 className="text-[20px] mb-6 font-[600] text-[#fff]">
+				<div className="mid_row flex md:flex-row flex-col justify-between items-start md:mt-8">
+					<div className="mt-6 mb-6 md:mb-0">
+						<h5 className="text-[16px] md:text-[20px] mb-6 font-[600] text-[#fff]">
 							Help us build the kind of broadband <br /> provider you’ve always wanted
 						</h5>
 						<Button text="Join the nu wave" className="w-fit" />
 					</div>
 					<div>
-						<a className="text-[20px] mb-6 font-[600] text-[#fff]">hello@nufibre.co.uk</a>
-						<div className="socials flex justify-end space-x-8 mt-6">
+						<a className="text-[16px] md:text-[20px] mb-6 font-[600] text-[#fff]">hello@nufibre.co.uk</a>
+						<div className="socials flex md:justify-end space-x-8 mt-6">
 							<XIcon />
 							<Facebook />
 							<Linkedin />
 						</div>
 					</div>
 				</div>
-				<div className="flex justify-between items-center">
-					<p className="text-[12px] mt-12 text-[#fff] font-[400]">
+				<div className="flex justify-between mt-24 md:flex-row md:mt-8  flex-col md:items-center">
+					<p className="text-[12px] md:mt-0 mt-6 text-[#fff] order-2 md:order-1 font-[400]">
 						© NUFIBRE LTD (16463711) <br />
 						Our registered office is at 167-169 Great Portland Street 5th Floor, London, W1W 5PF <br />
 						NUFIBRE is regulated by OFCOM
 					</p>
-					<ul className="flex space-x-6 text-[14px] font-[500] text-[#fff]">
+					<ul className="flex space-x-6 text-[14px] md:flex grid px-0 grid-cols-3 order-1 md:order-2 font-[500] text-[#fff]">
 						{footerItems.map((item) => (
 							<li key={item.name}>
 								<a href={item.href} className="font-[400] text-[#fff] text-[12px]">

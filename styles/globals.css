@@ -14,7 +14,7 @@ body {
 	transform: scaleX(-1);
 }
 
-.button {
+/* .button {
 	background-image: linear-gradient(to right, #00e3ec 0%, #c2e9fb 51%, #00e3ec 100%);
 	background-size: 200% auto;
 	background-position: left top;
@@ -27,4 +27,4 @@ body {
 		background-position: right bottom;
 		color: #000;
 	}
-}
+} */

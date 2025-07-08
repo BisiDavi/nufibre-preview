@@ -14,12 +14,12 @@ const menuItems = [
 export default function Header() {
 	return (
 		<div className="border-b-[#0e2223] border-b-[1px] text-[#fff] px-0 m-0 ">
-			<header className="container flex mx-auto justify-between items-center py-4">
+			<header className="container px-6 px-0 flex mx-auto justify-between items-center py-4">
 				<Link href="/">
 					<Logo />
 				</Link>
 				<div className="flex items-center justify-between space-x-10">
-					<nav className="header_nav ">
+					<nav className="header_nav hidden md:block">
 						<ul className="flex space-x-10 text-[14px] font-[500] text-[#fff]">
 							{menuItems.map((item) => (
 								<li key={item.name}>
