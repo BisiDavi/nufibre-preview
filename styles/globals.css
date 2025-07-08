@@ -1,31 +1,11 @@
 @import "tailwindcss";
 
-:root {
-	--background: #ffffff;
-	--foreground: #0f0f0f;
-}
-
-@theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0f0f0f;
-		--foreground: #ededed;
-	}
-}
-
 footer .socials svg:hover path {
 	fill: #00e3ec;
 }
 
 body {
-	background: var(--background);
-	color: var(--foreground);
+	background-color: "#0F0F0F";
 	font-family: Inter, sans-serif;
 }
 
@@ -35,7 +15,7 @@ body {
 }
 
 .button {
-	background-image: linear-gradient(to right, #00E3EC 0%, #c2e9fb 51%, #00E3EC 100%);
+	background-image: linear-gradient(to right, #00e3ec 0%, #c2e9fb 51%, #00e3ec 100%);
 	background-size: 200% auto;
 	background-position: left top;
 	border-color: transparent;

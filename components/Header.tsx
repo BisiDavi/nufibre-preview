@@ -19,7 +19,7 @@ export default function Header() {
 					<Logo />
 				</Link>
 				<div className="flex items-center justify-between space-x-10">
-					<nav>
+					<nav className="header_nav ">
 						<ul className="flex space-x-10 text-[14px] font-[500] text-[#fff]">
 							{menuItems.map((item) => (
 								<li key={item.name}>

@@ -92,8 +92,8 @@ export default function HomepageHero() {
 						<div className="pill bg-[#00E3EC] w-fit rounded-[500px] text-[#0F0F0F] font-[500] py-1.5 text-[14px] mb-4 px-4">
 							10% off: NU1
 						</div>
-						<div className="hero_text">
-							<div className=" flex mb-2 items-start">
+						<div className="hero_text text-white">
+							<div className=" flex mb-2 text-white items-start">
 								<h1 className="text-6xl flex items-center font-bold text-center ">
 									Introducing a
 									<div className="mx-3 h-[22px]">

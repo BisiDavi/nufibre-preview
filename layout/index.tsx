@@ -10,7 +10,7 @@ const interFont = Inter({
 
 export default function Layout({ children }: PropsWithChildren<{}>) {
 	return (
-		<div style={interFont.style} className="flex flex-col min-h-screen">
+		<div style={interFont.style} className="flex bg-[#0F0F0F] flex-col min-h-screen">
 			<Header />
 			<main>{children}</main>
 			<Footer />
