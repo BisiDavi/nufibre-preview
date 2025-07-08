@@ -23,8 +23,9 @@ export default function Header() {
 						<ul className="flex space-x-10 text-[14px] font-[500] text-[#fff]">
 							{menuItems.map((item) => (
 								<li key={item.name}>
-									<a href={item.href} className="text-[600] font-[#fff] text-[14px]">
+									<a href={item.href} className="menu_link text-[600] font-[#fff] text-[14px]">
 										{item.name}
+										<hr />
 									</a>
 								</li>
 							))}
