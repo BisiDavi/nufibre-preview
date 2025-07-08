@@ -25,7 +25,6 @@ export default function Header() {
 								<li key={item.name}>
 									<a href={item.href} className="menu_link text-[600] font-[#fff] text-[14px]">
 										{item.name}
-										<hr />
 									</a>
 								</li>
 							))}
