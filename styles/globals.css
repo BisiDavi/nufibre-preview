@@ -33,3 +33,18 @@ body {
 	-webkit-transform: scaleX(-1);
 	transform: scaleX(-1);
 }
+
+.button {
+	background-image: linear-gradient(to right, #00E3EC 0%, #c2e9fb 51%, #00E3EC 100%);
+	background-size: 200% auto;
+	background-position: left top;
+	border-color: transparent;
+	color: #464646;
+	text-decoration: none;
+	transition: all 0.35s;
+	box-sizing: border-box;
+	&:hover {
+		background-position: right bottom;
+		color: #000;
+	}
+}
