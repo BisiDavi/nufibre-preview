@@ -1,7 +1,5 @@
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import React, { PropsWithChildren } from "react";
-import { Toaster } from "react-hot-toast";
 import { Inter } from "next/font/google";
 
 const interFont = Inter({
@@ -9,13 +7,11 @@ const interFont = Inter({
 	weight: ["400", "500", "600", "700"],
 });
 
-export default function Layout({ children }: PropsWithChildren<{}>) {
+export default function SignupLayout({ children }: PropsWithChildren<{}>) {
 	return (
 		<div style={interFont.style} className="flex bg-[#0F0F0F] flex-col min-h-screen">
-			<Toaster />
-			<Header />
+			<Header onlyLogo />
 			<main>{children}</main>
-			<Footer />
 		</div>
 	);
 }

@@ -4,6 +4,10 @@ footer .socials svg:hover path {
 	fill: #00e3ec;
 }
 
+html {
+	background-color: #0F0F0F;
+}
+
 body {
 	background-color: "#0F0F0F";
 	font-family: Inter, sans-serif;
@@ -14,7 +18,7 @@ body {
 	transform: scaleX(-1);
 }
 
-/* .button {
+.button {
 	background-image: linear-gradient(to right, #00e3ec 0%, #c2e9fb 51%, #00e3ec 100%);
 	background-size: 200% auto;
 	background-position: left top;
@@ -27,4 +31,4 @@ body {
 		background-position: right bottom;
 		color: #000;
 	}
-} */
+}

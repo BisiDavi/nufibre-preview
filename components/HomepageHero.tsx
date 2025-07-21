@@ -1,87 +1,85 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import Image from "next/image";
-// import { useGSAP } from "@gsap/react";
-// import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-import Button from "@/components/Button";
 import GoCompare from "@/public/icons/GoCompareIcon";
 import CompareTheMarketIcon from "@/public/icons/CompareTheMarketIcon";
 import USwitchIcon from "@/public/icons/USwitchIcon";
 import LogoIcon from "@/public/icons/LogoIcon";
 import MoneySupermaketIcon from "@/public/icons/MoneySupermaketIcon";
-import RightIcon from "@/public/icons/RightIcon";
 
-// gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP);
 
-export default function HomepageHero() {
-	// useGSAP(() => {
-	// 	const menuLinks = document.querySelectorAll(".menu_link");
-	// 	// Add the underline span to the menu item
+export default function HomepageHero({ children }: PropsWithChildren) {
+	useGSAP(() => {
+		const menuLinks = document.querySelectorAll(".menu_link");
+		// Add the underline span to the menu item
 
-	// 	menuLinks.forEach((element) => {
-	// 		const underlineSpan = document.createElement("span");
-	// 		underlineSpan.style.position = "absolute";
-	// 		underlineSpan.style.bottom = "0";
-	// 		underlineSpan.style.left = "0";
-	// 		underlineSpan.style.width = "100%";
-	// 		underlineSpan.style.height = "2px";
-	// 		underlineSpan.style.backgroundColor = "#00E3EC";
-	// 		underlineSpan.style.transformOrigin = "left";
+		menuLinks.forEach((element) => {
+			const underlineSpan = document.createElement("span");
+			underlineSpan.style.position = "absolute";
+			underlineSpan.style.bottom = "0";
+			underlineSpan.style.left = "0";
+			underlineSpan.style.width = "100%";
+			underlineSpan.style.height = "2px";
+			underlineSpan.style.backgroundColor = "#00E3EC";
+			underlineSpan.style.transformOrigin = "left";
 
-	// 		// Start with the underline scaled to 0 width (invisible)
-	// 		underlineSpan.style.transform = "scaleX(0)";
+			// Start with the underline scaled to 0 width (invisible)
+			underlineSpan.style.transform = "scaleX(0)";
 
-	// 		element.appendChild(underlineSpan);
+			element.appendChild(underlineSpan);
 
-	// 		element.addEventListener("mouseenter", () => {
-	// 			gsap.to(underlineSpan, {
-	// 				scaleX: 1,
-	// 				duration: 0.4,
-	// 				ease: "power2.out",
-	// 			});
-	// 		});
-	// 		element.addEventListener("mouseleave", () => {
-	// 			gsap.to(underlineSpan, {
-	// 				scaleX: 0,
-	// 				duration: 0.4,
-	// 				ease: "power2.in",
-	// 			});
-	// 		});
-	// 	});
-	// 	gsap.from(".left_side", {
-	// 		opacity: 0,
-	// 		x: -50,
-	// 		duration: 1,
-	// 		ease: "power1.out",
-	// 	});
-	// 	gsap.from(".pill", {
-	// 		opacity: 0,
-	// 		y: -40,
-	// 		x: 0,
-	// 		duration: 1,
-	// 		ease: "power1.out",
-	// 	});
-	// 	gsap.from(".hero_text", {
-	// 		opacity: 0,
-	// 		y: -50,
-	// 		x: 0,
-	// 		duration: 1,
-	// 		ease: "power1.out",
-	// 	});
-	// 	gsap.from(".right_side", {
-	// 		opacity: 0,
-	// 		x: 50,
-	// 		duration: 1,
-	// 		ease: "power1.out",
-	// 	});
-	// 	gsap.to(".partner_icon", {
-	// 		y: 20,
-	// 		stagger: {
-	// 			ease: "power1.out",
-	// 			each: 0.1,
-	// 		},
-	// 	});
-	// }, []);
+			element.addEventListener("mouseenter", () => {
+				gsap.to(underlineSpan, {
+					scaleX: 1,
+					duration: 0.4,
+					ease: "power2.out",
+				});
+			});
+			element.addEventListener("mouseleave", () => {
+				gsap.to(underlineSpan, {
+					scaleX: 0,
+					duration: 0.4,
+					ease: "power2.in",
+				});
+			});
+		});
+		gsap.from(".left_side", {
+			opacity: 0,
+			x: -50,
+			duration: 1,
+			ease: "power1.out",
+		});
+		gsap.from(".pill", {
+			opacity: 0,
+			y: -40,
+			x: 0,
+			duration: 1,
+			ease: "power1.out",
+		});
+		gsap.from(".hero_text", {
+			opacity: 0,
+			y: -50,
+			x: 0,
+			duration: 1,
+			ease: "power1.out",
+		});
+		gsap.from(".right_side", {
+			opacity: 0,
+			x: 50,
+			duration: 1,
+			ease: "power1.out",
+		});
+		gsap.to(".partner_icon", {
+			y: 20,
+			stagger: {
+				ease: "power1.out",
+				each: 0.1,
+			},
+		});
+	}, []);
 
 	return (
 		<div>
@@ -104,16 +102,8 @@ export default function HomepageHero() {
 							<h1 className="text-[29px] md:text-6xl relative whitespace-nowrap flex font-bold text-center"> of doing broadband</h1>
 						</div>
 					</div>
-					<div className="bg-white mt-10 w-full md:w-[70%] flex rounded-[10px] h-[70px] justify-between items-center pr-3 pl-5 ">
-						<input
-							placeholder="Enter Postcode"
-							className="focus:outline-none w-full md:w-[75%] text-[#5E5E5E] placeholder-[#5E5E5E] py-4 text-[16px] font-[500] w-ful h-full"
-						/>
-						<Button textClassName="hidden md:block" text="Get started" className="whitespace-nowrap flex items-center gap-2">
-							<RightIcon />
-						</Button>
-					</div>
-					<div className="md:flex grid grid-cols-2 gap-6 md:gap-10 mt-10 items-center">
+					{children}
+					<div className="md:flex grid grid-cols-2 gap-6 md:gap-10 mt-5 items-center">
 						<div className="partner_icon">
 							<GoCompare />
 						</div>
