@@ -212,7 +212,7 @@ export default function AddressForm() {
 							placeholder="Enter Postcode"
 							onChange={(e) => setPostCode(e.target.value)}
 							value={postCode}
-							className="focus:outline-none capitalize w-full md:w-[80%] text-[#5E5E5E] placeholder-[#5E5E5E] py-4 text-[16px] font-[500] w-ful h-full"
+							className="focus:outline-none capitalize w-full md:w-[80%] text-[#000] placeholder-[#000] py-4 text-[16px] font-[500] w-ful h-full"
 						/>
 
 						{isLoading ? (
@@ -244,7 +244,7 @@ export default function AddressForm() {
 									) : (
 										<div className="-mt-4 pt-4 bg-white w-[85%] rounded-b-[10px]">
 											{data && Array.isArray(data) ? (
-												<div className="address_list w-[100%] flex flex-col space-y-4 max-h-64 pt-0 overflow-y-auto bg-white rounded-b-[10px]">
+												<div className="address_list px-1 w-[100%] flex flex-col space-y-4 max-h-64 pt-0 overflow-y-auto bg-white rounded-b-[10px]">
 													{data?.length > 0 ? (
 														data?.map((d, index) => {
 															const __address = {
@@ -256,9 +256,9 @@ export default function AddressForm() {
 																<button
 																	key={index}
 																	type="button"
-																	className="block  text-left cursor-pointer"
+																	className="block py-2 text-left cursor-pointer"
 																	onClick={() => handleSelectAddress(formattedAddress, longAddress, shortAddress)}>
-																	<h3 className="text-[16px] text-[#5E5E5E] px-4">{longAddress}</h3>
+																	<h3 className="text-[16px] text-[#000] px-4">{longAddress}</h3>
 																</button>
 															);
 														})
@@ -282,7 +282,7 @@ export default function AddressForm() {
 				</>
 			) : (
 				<div className="bg-white mt-10 w-full md:w-[85%] flex rounded-[10px] h-[70px] justify-between items-center pr-3 pl-5 ">
-					<div className="text-[#5E5E5E] text-[16px]">{selectedLongAddress}</div>
+					<div className="text-[#000] text-[16px]">{selectedLongAddress}</div>
 					<button onClick={changeSelectedAddress} className="flex items-center cursor-pointer">
 						<XCircleIcon />
 					</button>
