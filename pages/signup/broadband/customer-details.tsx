@@ -85,6 +85,8 @@ function CustomerDetailsPage() {
 			// generate payload
 			const leadPayload = generateCustomerLeadPayload(form);
 
+			console.log('leadPayload', leadPayload);
+
 			// axios.post(`${process.env.NEXT_PUBLIC_API_ROOT}/create/customer`, leadPayload);
 
 			setLoading(false);
@@ -100,6 +102,7 @@ function CustomerDetailsPage() {
 
 			return;
 		} catch (error) {
+			console.error("Error in continueHandler:", error);
 			setLoading(false);
 			return customToast.error("Something has gone wrong please contact us");
 		}
@@ -124,7 +127,7 @@ function CustomerDetailsPage() {
 						<div className="md:w-[511px] space-y-[1.3rem] w-full flex flex-col md:mt-4 mt-5 mx-auto items-center justify-center">
 							{formContent.map((input) => {
 								const inputName = input.name as keyof typeof form;
-								const value = form[inputName] as any;
+								const value = form[inputName]
 								return (
 									<Input
 										input={input}

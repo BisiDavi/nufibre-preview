@@ -129,7 +129,7 @@ export default function PreviousAddressForm() {
 
 			// save prev address state
 			const previousAddressSessionData = getItem(sessionStoreKeys.previousAddress);
-			const parseAllPreviousAddress: any = previousAddressSessionData ? parseJson(previousAddressSessionData) : null;
+			const parseAllPreviousAddress = previousAddressSessionData ? parseJson(previousAddressSessionData) : null;
 			const previousAddress = Array.isArray(parseAllPreviousAddress) && parseAllPreviousAddress?.length > 0 ? [...parseAllPreviousAddress, __selectedAddress] : [__selectedAddress];
 			setItem(sessionStoreKeys.previousAddress, JSON.stringify(previousAddress));
 
@@ -173,10 +173,6 @@ export default function PreviousAddressForm() {
 
 		return
 	}
-
-	const disableContinueButtonStyle = isSelectedAddress
-		? "bg-MainGreen !w-[200px] hover:bg-[#000] search-btn btn btn-square px-4 py-3 btn-primary text-md font-bold  text-white transition-colors duration-200 transform rounded-[6px] focus:outline-none"
-		: "bg-MainGreen hover:bg-[#000] !w-[200px] py-3 px-4 text-md font-bold text-white transition-colors duration-200 transform rounded-[6px] focus:outline-none disabled:text-white";
 
 	return (
 		<div className="w-full">

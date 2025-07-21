@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { useRouter } from "next/router";
 
-import { BroadbandPath, sessionStoreKeys } from "@/utils/constants";
+import { sessionStoreKeys } from "@/utils/constants";
 import SelectDropdown from "@/components/SelectDropdown";
 import useDropdown from "@/hooks/useDropdown";
 import { getItem, setItem } from "@/utils/sessionStore";
@@ -20,7 +20,7 @@ type OTSProvidersType = Array<{ name: string; rcpid: string }>;
 function ProviderCurrentPage() {
 	const [currentProvider, setCurrentProvider] = useState("");
 	const router = useRouter();
-	const { data, isLoading } = useGetOTSProviders();
+	const { data } = useGetOTSProviders();
 	const [OTSProviders, setOTSProviders] = useState<OTSProvidersType | []>([]);
 	const { openDropdown, closeDropdown, dropdown } = useDropdown();
 	const { addToastToQueue } = useToastQueue();
